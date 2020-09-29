@@ -70,6 +70,15 @@ public class AddressBookMain {
 
 			
 		}
+		public void deleteContact(String name) {
+			String x = "";
+			for(Contact contact : addressBook) {
+				x = contact.getFirstName() + contact.getLastName();
+				if(name.equals(x)) {
+					addressBook.remove(contact);
+				}
+			}
+		}
     
 	
 	public static void main (String[] args) {
@@ -81,6 +90,8 @@ public class AddressBookMain {
     	sc.nextLine();
     	System.out.println("1.Add a new Contact");
     	System.out.println("2.Edit the contact details");
+    	System.out.println("3.Delete a contact");
+    	
     	int choice = sc.nextInt();
     	sc.nextLine();
     	switch(choice) {
@@ -112,6 +123,11 @@ public class AddressBookMain {
     		String name=sc.nextLine();
     		addressBook.editContact(name);
     		break;
+    	case 3:
+    		System.out.println("Enter the contact name");
+    		String  contactName = sc.nextLine();
+    		addressBook.deleteContact(contactName);//deleted Contact
+    		break;	
     	default:
     		break;
     	
