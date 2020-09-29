@@ -10,6 +10,7 @@ public class Contact {
 	private int zipcode;
 	private String email;
 	
+	
 	public String getFirstName() {
 		return firstName;
 	}
@@ -58,5 +59,19 @@ public class Contact {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	public Contact(String firstName, String lastName, String address, String city, String state,
+			int zipcode, long phoneNumber, String email) {
+		
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.address = address;
+		this.city = city;
+		this.state = state;
+		this.zipcode = zipcode;
+		this.phoneNumber = phoneNumber;
+		this.email = email;
+		
+		// TODO Auto-generated constructor stub
 	}
 }
