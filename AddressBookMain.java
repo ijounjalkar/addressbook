@@ -77,6 +77,11 @@ public class AddressBookMain{
 		}
 
 	}
+	public void sortByZip() {
+		for(Map.Entry<String,AddressBook> entry : addressBookMap.entrySet()) {
+			Collections.sort(entry.getValue().getBook(),new SortByZip());
+		}
+	}
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		AddressBookMain addBookMain = new AddressBookMain();
@@ -94,7 +99,8 @@ public class AddressBookMain{
 			System.out.println("10.to count contact from city");
 			System.out.println("11.to count contact from state");
 			System.out.println("12.to sort the addressbook by name");
-			System.out.println("13.exit");
+			System.out.println("13.to sort the addressbook by zip");
+			System.out.println("14.exit");
 			v = scanner.nextInt();
 			scanner.nextLine();
 			switch(v) {
@@ -116,7 +122,7 @@ public class AddressBookMain{
 					System.out.println("Enter the state name");
 					String state = scanner.next();
 					System.out.println("Enter the ZIP code");
-					String zip = scanner.next();
+					long zip = scanner.nextLong();
 					System.out.println("Enter the phone number");
 					long phoneNumber = scanner.nextLong();
 					scanner.nextLine();
@@ -205,7 +211,11 @@ public class AddressBookMain{
 					addBookMain.sortByName();
 					break;
 				case 13:
+					addBookMain.sortByZip();
+					break;
+				case 14:
 					System.exit(0);
+					break;
 			}
 		}
 	}
