@@ -11,77 +11,88 @@ public class Contact{
 	private String email;
 	
 	public Contact(String firstName,String lastName,String address,String city,String state,String zip,long phoneNumber,String email) {
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.address = address;
-		this.city = city;
-		this.state = state;
-		this.zip = zip;
-		this.phoneNumber = phoneNumber;
-		this.email = email;
+	    this.firstName = firstName;
+	    this.lastName = lastName;
+	    this.address = address;
+	    this.city = city;
+	    this.state = state;
+	    this.zip = zip;
+	    this.phoneNumber = phoneNumber;
+	    this.email = email;
 	}
-
+	@Override
+	public boolean equals(Object o) {
+	    boolean result = false;
+	    if(o == this) {
+		return true;
+	    }
+	    Contact c = (Contact)o;
+	    if(c.firstName.equals(this.firstName) && c.lastName.equals(this.lastName)) {
+		result = true;
+	    }
+	    return result;
+	}
 	public String getFirstName() {
-		return firstName;
+	    return firstName;
 	}
 
 	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	    this.firstName = firstName;
 	}
-
+		
 	public String getLastName() {
-		return lastName;
+	    return lastName;
 	}
 
 	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	    this.lastName = lastName;
 	}
 
 	public String getAddress() {
-		return address;
+	    return address;
 	}
 
 	public void setAddress(String address) {
-		this.address = address;
+	    this.address = address;
 	}
 
 	public String getCity() {
-		return city;
+	    return city;
 	}
 
 	public void setCity(String city) {
-		this.city = city;
+	    this.city = city;
 	}
 
 	public String getState() {
-		return state;
+	    return state;
 	}
 
 	public void setState(String state) {
-		this.state = state;
+	    this.state = state;
 	}
 
 	public String getZip() {
-		return zip;
+	    return zip;
 	}
 
 	public void setZip(String zip) {
-		this.zip = zip;
+	    this.zip = zip;
 	}
 
 	public long getPhoneNumber() {
-		return phoneNumber;
+	    return phoneNumber;
 	}
 
 	public void setPhoneNumber(long phoneNumber) {
-		this.phoneNumber = phoneNumber;
+	    this.phoneNumber = phoneNumber;
 	}
 
 	public String getEmail() {
-		return email;
+	    return email;
 	}
 
 	public void setEmail(String email) {
-		this.email = email;
+	    this.email = email;
 	}
 }
