@@ -1,5 +1,6 @@
 package address;
 
+
 public class Contact{
 	private String firstName;
 	private String lastName;
@@ -96,7 +97,7 @@ public class Contact{
 	    this.email = email;
 	}
 	public String toString() {
-		return "First Name : " + this.getFirstName() + " Last Name : " + this.getLastName() + " Address : " + this.getAddress() + " City : " + this.getCity() 
-		+ " State : " + this.getState() + " ZIP : " + this.getZip() + " Phone Number : " + this.getPhoneNumber() + " Email ID : " + this.getEmail() + "\n";
+		return this.getFirstName() + " " + this.getLastName() + ", " + this.getAddress() + ", " + this.getCity() 
+		+ ", " + this.getState() + ", " + this.getZip() + ", " + this.getPhoneNumber() + ", " + this.getEmail() + "\n";
 	}
 }
