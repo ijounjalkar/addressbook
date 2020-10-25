@@ -264,8 +264,11 @@ import java.util.stream.Collectors;
 						addBookMain.readData(IOService.FILE_IO);
 						break;
 					case 15:
+						new AddressBookService().writeDataToCSV(cityBookMap);
+				                new AddressBookService().readDataFromCSV();
+				                break;
+					case 16:
 						System.exit(0);
-						break;
 				}
 			}
 		}
