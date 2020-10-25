@@ -1,7 +1,10 @@
 package address;
 
+import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
+
+import com.opencsv.exceptions.CsvValidationException;
 
 	
 	public class AddressBookMain{
@@ -169,7 +172,7 @@ import java.util.stream.Collectors;
 				new AddressBookService().readData();
 			}
 		}
-		public static void main(String[] args) {
+		public static void main(String[] args) throws CsvValidationException {
 			Scanner scanner = new Scanner(System.in);
 			AddressBookMain addBookMain = new AddressBookMain();
 			int v;
@@ -264,10 +267,18 @@ import java.util.stream.Collectors;
 						addBookMain.readData(IOService.FILE_IO);
 						break;
 					case 15:
-						new AddressBookService().writeDataToCSV(cityBookMap);
-				                new AddressBookService().readDataFromCSV();
-				                break;
+						new AddressBookService().writeDataToCSV(addressBookMap);
+						new AddressBookService().readDataFromCSV();
+						break;
 					case 16:
+						try {
+							new AddressBookService().writeDataToJSON(addressBookMap);
+							new AddressBookService().readDataFromJSON();
+						} catch (IOException e) {
+							e.printStackTrace();
+						}
+						break;
+					case 17:
 						System.exit(0);
 				}
 			}
